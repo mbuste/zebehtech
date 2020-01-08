@@ -13,7 +13,8 @@ import { environment } from '../environments/environment';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'birthdays', component: BirthdaysComponent },
-  { path: 'lifestyle', component: LifestyleComponent }
+  { path: 'lifestyle', component: LifestyleComponent },
+  { path: 'potraits', component: PotraitsComponent }
 ];
 
 import {
@@ -34,6 +35,7 @@ import { BirthdaysComponent } from './components/birthdays/birthdays.component';
 import { HomeComponent } from './components/home/home.component';
 import { PhotosService } from './photos.service';
 import { LifestyleComponent } from './components/lifestyle/lifestyle.component';
+import { PotraitsComponent } from './components/potraits/potraits.component';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { LifestyleComponent } from './components/lifestyle/lifestyle.component';
     AppComponent,
     HomeComponent,
     BirthdaysComponent,
-    LifestyleComponent],
+    LifestyleComponent,
+    PotraitsComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
