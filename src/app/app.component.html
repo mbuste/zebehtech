@@ -16,6 +16,8 @@
   <mat-menu color="primary" #work="matMenu">
       <button mat-menu-item color="primary" routerLink='/potraits'>potraits</button>
       <mat-divider></mat-divider>
+      <button mat-menu-item routerLink='/lifestyle'>lifestyle</button>
+      <mat-divider></mat-divider>
       <button mat-menu-item color="primary" [matMenuTriggerFor]="events">events</button>
   </mat-menu>
 
@@ -25,6 +27,7 @@
       <button mat-menu-item routerLink='/birthdays'>birthdays</button>
       <mat-divider></mat-divider>
       <button mat-menu-item routerLink='/parties'>parties</button>
+      
   </mat-menu>
 
   <mat-menu color="primary" #connect="matMenu">
