@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'lifestyle', component: LifestyleComponent },
   { path: 'potraits', component: PotraitsComponent },
   { path: 'parties', component: PartiesComponent },
-  { path: 'weddings', component: WeddingsComponent }
+  { path: 'weddings', component: WeddingsComponent },
+  { path: 'about', component: AboutComponent }
 ];
 
 import {
@@ -40,6 +41,7 @@ import { LifestyleComponent } from './components/lifestyle/lifestyle.component';
 import { PotraitsComponent } from './components/potraits/potraits.component';
 import { PartiesComponent } from './components/parties/parties.component';
 import { WeddingsComponent } from './components/weddings/weddings.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { WeddingsComponent } from './components/weddings/weddings.component';
     LifestyleComponent,
     PotraitsComponent,
     PartiesComponent,
-    WeddingsComponent],
+    WeddingsComponent,
+    AboutComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
