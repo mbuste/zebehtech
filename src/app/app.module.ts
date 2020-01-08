@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'birthdays', component: BirthdaysComponent },
   { path: 'lifestyle', component: LifestyleComponent },
-  { path: 'potraits', component: PotraitsComponent }
+  { path: 'potraits', component: PotraitsComponent },
+  { path: 'parties', component: PartiesComponent }
 ];
 
 import {
@@ -36,6 +37,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PhotosService } from './photos.service';
 import { LifestyleComponent } from './components/lifestyle/lifestyle.component';
 import { PotraitsComponent } from './components/potraits/potraits.component';
+import { PartiesComponent } from './components/parties/parties.component';
 
 
 @NgModule({
@@ -44,7 +46,8 @@ import { PotraitsComponent } from './components/potraits/potraits.component';
     HomeComponent,
     BirthdaysComponent,
     LifestyleComponent,
-    PotraitsComponent],
+    PotraitsComponent,
+    PartiesComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
