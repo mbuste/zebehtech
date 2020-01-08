@@ -24,11 +24,13 @@ import {
   MatProgressSpinnerModule
 } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import { BirthdaysComponent } from './components/birthdays/birthdays.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent  ],
+    AppComponent,
+    BirthdaysComponent  ],
   imports: [
     BrowserModule,
     MatButtonModule,
