@@ -6,8 +6,14 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
+
 import { environment } from '../environments/environment';
 
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'birthdays', component: BirthdaysComponent }
+];
 
 import {
   MatToolbarModule,
@@ -23,16 +29,19 @@ import {
   MatSnackBarModule,
   MatProgressSpinnerModule
 } from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
 import { BirthdaysComponent } from './components/birthdays/birthdays.component';
+import { HomeComponent } from './components/home/home.component';
+import { PhotosService } from './photos.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BirthdaysComponent  ],
+    HomeComponent,
+    BirthdaysComponent],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     MatButtonModule,
     MatInputModule,
     MatCardModule,
@@ -40,7 +49,6 @@ import { BirthdaysComponent } from './components/birthdays/birthdays.component';
     MatFormFieldModule,
     MatOptionModule,
     MatOptionModule,
-
     MatSnackBarModule,
     MatToolbarModule,
     MatSnackBarModule,
@@ -54,7 +62,7 @@ import { BirthdaysComponent } from './components/birthdays/birthdays.component';
     CarouselModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [PhotosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
