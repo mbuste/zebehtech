@@ -1,0 +1,41 @@
+<mat-toolbar>
+  <img routerLink='/home' src='https://res.cloudinary.com/zebehtech/image/upload/v1578295613/qty_rqu7ql.png' alt='' />
+  <button class='menu-icon' mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+      <button id='work-menu' mat-menu-item color="primary" [matMenuTriggerFor]="work">Work</button>
+      <button id='connect-menu' mat-menu-item color="primary" [matMenuTriggerFor]="connect">Connect</button>
+      <button id='about-menu' mat-menu-item color="primary">about</button>
+  </mat-menu>
+  <button id='work-menu' class='main-menu' mat-menu-item color="primary" [matMenuTriggerFor]="work">Work</button>
+  <button id='connect-menu' class='main-menu' mat-menu-item color="primary"
+      [matMenuTriggerFor]="connect">Connect</button>
+  <button id='about-menu' class='main-menu' mat-menu-item color="primary">about</button>
+
+  <mat-menu color="primary" #work="matMenu">
+      <button mat-menu-item color="primary" routerLink='/potraits'>potraits</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item color="primary" [matMenuTriggerFor]="events">events</button>
+  </mat-menu>
+
+  <mat-menu #events="matMenu">
+      <button mat-menu-item routerLink='/weddings'>weddings</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item routerLink='/birthdays'>birthdays</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item routerLink='/parties'>parties</button>
+  </mat-menu>
+
+  <mat-menu color="primary" #connect="matMenu">
+      <a mat-menu-item document.location.href='https://google.com' color="primary">Instagram</a>
+      <mat-divider></mat-divider>
+      <button mat-menu-item color="primary" [matMenuTriggerFor]="events">Facebook</button>
+  </mat-menu>
+  <mat-menu color="primary">
+
+  </mat-menu>
+</mat-toolbar>
+<div>
+  <router-outlet></router-outlet>
+</div>

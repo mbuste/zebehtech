@@ -1,0 +1,45 @@
+mat-toolbar {
+    height: 95px;
+  
+    img {
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    mat-toolbar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  
+      button {
+        grid-column: 1/2;
+        grid-row: 1;
+      }
+      img {
+        grid-column: 2/3;
+      }
+  
+      .main-menu {
+        display: none;
+      }
+    }
+  }
+  
+  @media (min-width: 560px) {
+    mat-toolbar {
+      display: grid;
+      grid-template-columns: repeat(20, 1fr);
+  
+      .menu-icon {
+        display: none;
+      }
+  
+      #work-menu {
+        grid-column: 17/18;
+      }
+      #connect-menu {
+        grid-column: 18/20;
+      }
+    }
+  }
+  
