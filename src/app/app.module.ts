@@ -12,7 +12,8 @@ import { environment } from '../environments/environment';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'birthdays', component: BirthdaysComponent }
+  { path: 'birthdays', component: BirthdaysComponent },
+  { path: 'lifestyle', component: LifestyleComponent }
 ];
 
 import {
@@ -32,13 +33,15 @@ import {
 import { BirthdaysComponent } from './components/birthdays/birthdays.component';
 import { HomeComponent } from './components/home/home.component';
 import { PhotosService } from './photos.service';
+import { LifestyleComponent } from './components/lifestyle/lifestyle.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    BirthdaysComponent],
+    BirthdaysComponent,
+    LifestyleComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
