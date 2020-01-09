@@ -1,0 +1,98 @@
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100px;
+  width: 400px;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+
+  .inputBox {
+    position: relative;
+
+    input,
+    textarea {
+      height: auto;
+      width: 100%;
+      padding: 10px 0;
+      letter-spacing: 1px;
+      font-size: 16px;
+      color: #fff;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid #03a9f4;
+      outline: none;
+      background: transparent;
+    }
+    label {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      letter-spacing: 1px;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+    input:focus ~ label,
+    textarea:focus ~ label {
+      top: -10px;
+      left: 0;
+      color: #03a9f4;
+      font-size: 12px;
+    }
+
+    i {
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      right: 10px;
+      visibility: hidden;
+    }
+    small {
+      visibility: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .success {
+    input {
+      border-bottom: solid #2ecc71 1px;
+    }
+    .check-circle {
+      color: #2ecc71;
+      visibility: visible;
+    }
+  }
+  .error {
+    input {
+      border-bottom: solid #e74c3c 1px;
+    }
+    .exclamation-circle {
+      color: #e74c3c;
+      visibility: visible;
+    }
+    small {
+      color: #e74c3c;
+      visibility: visible;
+    }
+  }
+
+  .box input[type="submit"] {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #03a9f4;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+}

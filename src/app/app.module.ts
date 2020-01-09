@@ -17,7 +17,8 @@ const routes: Routes = [
   { path: 'potraits', component: PotraitsComponent },
   { path: 'parties', component: PartiesComponent },
   { path: 'weddings', component: WeddingsComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  {path:'login', component: LoginformComponent}
 ];
 
 import {
@@ -42,6 +43,7 @@ import { PotraitsComponent } from './components/potraits/potraits.component';
 import { PartiesComponent } from './components/parties/parties.component';
 import { WeddingsComponent } from './components/weddings/weddings.component';
 import { AboutComponent } from './components/about/about.component';
+import { LoginformComponent } from './components/loginform/loginform.component';
 
 
 @NgModule({
@@ -53,7 +55,8 @@ import { AboutComponent } from './components/about/about.component';
     PotraitsComponent,
     PartiesComponent,
     WeddingsComponent,
-    AboutComponent],
+    AboutComponent,
+    LoginformComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
@@ -62,7 +65,6 @@ import { AboutComponent } from './components/about/about.component';
     MatCardModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatOptionModule,
     MatOptionModule,
     MatSnackBarModule,
     MatToolbarModule,
