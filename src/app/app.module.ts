@@ -44,6 +44,7 @@ import { PartiesComponent } from './components/parties/parties.component';
 import { WeddingsComponent } from './components/weddings/weddings.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { LoginformComponent } from './components/loginform/loginform.component';
     PartiesComponent,
     WeddingsComponent,
     AboutComponent,
-    LoginformComponent],
+    LoginformComponent,
+    FileUploadComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
