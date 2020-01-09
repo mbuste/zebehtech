@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CookieService } from 'ngx-cookie-service';
 import { environment } from '../environments/environment';
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'parties', component: PartiesComponent },
   { path: 'weddings', component: WeddingsComponent },
   { path: 'about', component: AboutComponent },
-  {path:'login', component: LoginformComponent}
+  { path: 'login', component: LoginformComponent }
 ];
 
 import {
@@ -81,7 +81,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     CarouselModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [PhotosService],
+  providers: [PhotosService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

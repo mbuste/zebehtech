@@ -11,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class FileUploadComponent implements OnInit {
   title = 'fileupload';
 
-  constructor(private httpService: HttpClient, private photosservice: PhotosService, private router: Router) { }
+  constructor(private httpService: HttpClient) { }
   myFiles: string[] = [];
   category: string = '';
   sMsg: string = '';

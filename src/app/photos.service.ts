@@ -5,22 +5,19 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PhotosService {
-
-  uri = 'https://photowebbackend.herokuapp.com';
+uri='http://localhost:9000'
+  // uri = 'https://photowebbackend.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
   addImages(myFiles) {
     const images = myFiles;
-
     return this.http.post(`${this.uri}/upload-images`, images);
   }
 
-  getPhotos() {
-    return this.http.get(`${this.uri}/images`);
-  }
-  getWeddingPhotos() {
-    return this.http.get(`${this.uri}/images/weddingphotos`);
+  getPhotos() {    return this.http.get(`${this.uri}/images`);  }
+
+  getWeddingPhotos() {    return this.http.get(`${this.uri}/images/weddingphotos`);
   }
 
   getPotraitPhotos() {
@@ -35,6 +32,10 @@ export class PhotosService {
   }
   getBirthdayPhotos() {
     return this.http.get(`${this.uri}/images/birthdayphotos`);
+  }
+
+  performLogin(data){
+    return this.http.post(`${this.uri}/login`, data);
   }
 }
 

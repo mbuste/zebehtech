@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { PhotosService } from '../../photos.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-loginform',
   templateUrl: './loginform.component.html',
   styleUrls: ['./loginform.component.scss']
 })
 export class LoginformComponent implements OnInit {
-  email: String = '';
-  pass: String = '';
+  email: string = '';
+  pass: string = '';
 
-  constructor() { }
+  constructor(private photosservice: PhotosService) { }
 
   handleEmailChange(e) { this.email = e.target.value; }
 
@@ -22,22 +24,28 @@ export class LoginformComponent implements OnInit {
   }
 
   checkInputs() {
-    if(this.validateEmail()&& this.validatePass()){
-      
-    }else{
-      console.log("failed")
+    if (this.validateEmail() && this.validatePass()) {
+      this.performLogin();
     }
-    
+  }
+
+  performLogin() {
+    const formData = new FormData();
+    formData.append("email", this.email);
+    formData.append("password", this.pass);
+    this.photosservice
+    .performLogin(formData)
+    .subscribe(data => console.log(data))
   }
 
   validatePass() {
     if (this.pass.trim().length < 8) {
       this.setErrorFor(<HTMLElement>document.getElementById('password'), "Password too short");
       return false;
-    }else{
-      this.setSuccessFor(<HTMLElement> document.getElementById('password'));
+    } else {
+      this.setSuccessFor(<HTMLElement>document.getElementById('password'));
       return true;
-    }    
+    }
   }
 
   validateEmail() {
