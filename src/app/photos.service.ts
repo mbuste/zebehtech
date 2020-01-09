@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PhotosService {
-uri='http://localhost:9000'
-  // uri = 'https://photowebbackend.herokuapp.com';
+// uri='http://localhost:9000'
+  uri = 'https://photowebbackend.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
