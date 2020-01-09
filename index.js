@@ -1,9 +1,7 @@
 require('dotenv').config()
-const http = require('http');
-const app = require('./app');
-
-const port = process.env.PORT || 9000;
-const server = http.createServer(app);
+const express =require('express')
+const port = process.env.PORT || 7000;
+const app = express();
 const path = require('path');
 
 // Serve only the static files form the dist directory
@@ -14,4 +12,4 @@ app.get('/*', function(req,res) {
 res.sendFile(path.join(__dirname+'/dist/zebehtech/index.html'));
 });
 
-server.listen(port,()=>console.log('running'));
+app.listen(port,()=>console.log('running'));
