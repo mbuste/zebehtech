@@ -1,20 +1,19 @@
-<form id='form'><div class="box">
-  
-  <div class="inputBox">
-    <input id='email' (change)="handleSelectChange($event)" type="email" name="email" />
-    <i class="material-icons check-circle"> check_circle </i>
-    <i class="material-icons exclamation-circle"> error </i>
-    <small>Error message</small>
-    <label>Email</label>
+<form id='form'>
+  <div class="box">
+    <div class="inputBox">
+      <input id='email' (change)="handleEmailChange($event)" type="email" name="email" />
+      <i class="material-icons check-circle"> check_circle </i>
+      <i class="material-icons exclamation-circle"> error </i>
+      <small>Error message</small>
+      <label>Email</label>
+    </div>
+    <div class="inputBox">
+      <input (change)="handlePassChange($event)" id='password' type="password" name="pass" />
+      <i class="material-icons check-circle"> check_circle</i>
+      <i class="material-icons exclamation-circle"> error </i>
+      <small>Error message</small>
+      <label>Password</label>
+    </div>
+    <input type='submit' (click)="handleSubmit($event)" />
   </div>
-  <div class="inputBox">
-    <input id='password' type="password" name="name" />
-    <i class="material-icons check-circle"> check_circle</i>
-    <i class="material-icons exclamation-circle"> error </i>
-    <small>Error message</small>
-    <label>Password</label>
-  </div>
-  <input type='submit' (click)="handleSubmit($event)"/>
-
-</div>
 </form>
