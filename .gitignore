@@ -51,3 +51,5 @@ Thumbs.db
 ./app.js
 app.js
 /app.js
+
+/src/app/components/file-upload

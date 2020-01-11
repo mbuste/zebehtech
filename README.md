@@ -1,7 +1,24 @@
 # Zebehtech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+-Developed using angular js version 8
 
-## Development server
+-The start script is a call to an express server.
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+-The express server serves angular files from the build folder named /dist
+
+-makes use of the @angular/pwa module to implement progressive web app features.
+
+-@angular Material module is utilized for most UI components
+
+-ngx-cookie-service module is used for cookie management in authentication.
+
+-All photo requests to the backend are made via the Photos service.
+
+-Utilizes SCSS for style proprocessing
+
+-makes use of bootstrap4 as a CSS framework.
+
+-Client side form validation performed using JavaScripts DOM manipulation capabilities.
+
+-the heroku post build script in the package.json file facilitates hosting on
+the heroku cloud.

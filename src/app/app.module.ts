@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: 'weddings', component: WeddingsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginformComponent }
+  // { path: 'file', component: FileUploadComponent }
 ];
 
 import {
@@ -44,7 +45,7 @@ import { PartiesComponent } from './components/parties/parties.component';
 import { WeddingsComponent } from './components/weddings/weddings.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
+// import { FileUploadComponent } from './components/file-upload/file-upload.component';
 
 
 @NgModule({
@@ -57,8 +58,9 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     PartiesComponent,
     WeddingsComponent,
     AboutComponent,
-    LoginformComponent,
-    FileUploadComponent],
+    // FileUploadComponent,
+    LoginformComponent
+    ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
