@@ -34,11 +34,10 @@ export class LoginformComponent implements OnInit {
     }
     this.user
       .performLogin(formData)
-      .subscribe(data =>{
-        console.log(data);
+      .subscribe(data => {
         this.user.setUserLoggedIn(data);
       })
-      
+
 
   }
 
