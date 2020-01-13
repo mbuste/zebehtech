@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'weddings', component: WeddingsComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginformComponent },
-  { path: 'file', component: FileUploadComponent }
+  { path: 'file', canActivate: [AuthguardGuard], component: FileUploadComponent }
 ];
 
 import {
@@ -46,6 +46,7 @@ import { WeddingsComponent } from './components/weddings/weddings.component';
 import { AboutComponent } from './components/about/about.component';
 import { LoginformComponent } from './components/loginform/loginform.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { AuthguardGuard } from './authguard.guard';
 
 
 @NgModule({
@@ -60,7 +61,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     AboutComponent,
     FileUploadComponent,
     LoginformComponent
-    ],
+  ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
@@ -83,7 +84,7 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
     CarouselModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [PhotosService, CookieService],
+  providers: [PhotosService, CookieService, AuthguardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

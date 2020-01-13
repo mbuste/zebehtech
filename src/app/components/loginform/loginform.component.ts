@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotosService } from '../../photos.service';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-loginform',
@@ -12,7 +10,7 @@ export class LoginformComponent implements OnInit {
   email: string = '';
   pass: string = '';
 
-  constructor(private photosservice: PhotosService) { }
+  constructor(private user: UserService) { }
 
   handleEmailChange(e) { this.email = e.target.value; }
 
@@ -30,12 +28,18 @@ export class LoginformComponent implements OnInit {
   }
 
   performLogin() {
-    const formData = new FormData();
-    formData.append("email", this.email);
-    formData.append("password", this.pass);
-    this.photosservice
-    .performLogin(formData)
-    .subscribe(data => console.log(data))
+    let formData = {
+      "email": this.email,
+      "password": this.pass
+    }
+    this.user
+      .performLogin(formData)
+      .subscribe(data =>{
+        console.log(data);
+        this.user.setUserLoggedIn(data);
+      })
+      
+
   }
 
   validatePass() {

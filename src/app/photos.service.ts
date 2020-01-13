@@ -34,8 +34,6 @@ export class PhotosService {
     return this.http.get(`${this.uri}/images/birthdayphotos`);
   }
 
-  performLogin(data){
-    return this.http.post(`${this.uri}/login`, data);
-  }
+  
 }
 
