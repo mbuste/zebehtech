@@ -7,11 +7,16 @@
         <button id='work-menu' mat-menu-item color="primary" [matMenuTriggerFor]="work">Work</button>
         <a href='https;//instagram.com/zebehtech' target="_blank" id='connect-menu' mat-menu-item color="primary">InstaZebeh</a>
         <button id='about-menu' routerLink='/about' mat-menu-item color="primary">about</button>
+        <button *ngIf="checkStateUpload()" routerLink='/file' class='main-menu' mat-menu-item>Upload</button>
+        <button *ngIf="checkState()" routerLink='/login' class='main-menu' mat-menu-item>Login</button>
+    
     </mat-menu>
     <button id='work-menu' class='main-menu' mat-menu-item color="primary" [matMenuTriggerFor]="work">Work</button>
     <a href='https://instagram.com/zebehtech' target="_blank" id='connect-menu' class='main-menu' mat-menu-item
         color="primary">InstaZebeh</a>
     <button id='about-menu' routerLink='/about' class='main-menu' mat-menu-item color="primary">about</button>
+    <button *ngIf="checkState()" routerLink='/login' class='main-menu' mat-menu-item>Login</button>
+    <button *ngIf="checkStateUpload()" routerLink='/file' class='main-menu' mat-menu-item>Upload</button>
 
     <mat-menu color="primary" #work="matMenu">
         <button mat-menu-item color="primary" routerLink='/potraits'>potraits</button>
@@ -27,13 +32,7 @@
         <button mat-menu-item routerLink='/birthdays'>birthdays</button>
         <mat-divider></mat-divider>
         <button mat-menu-item routerLink='/parties'>parties</button>
-
     </mat-menu>
-
-    <!-- <mat-menu color="primary" #connect="matMenu">
-      <a mat-menu-item href='https://instagram.com/zebehtech' color="primary">Instagram</a>
-      <mat-divider></mat-divider>
-  </mat-menu> -->
     <mat-menu color="primary">
 
     </mat-menu>

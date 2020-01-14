@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import {Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
@@ -8,8 +8,7 @@ export class UserService {
   public username;
   isUserLoggedIn: boolean = false;
   uri = 'https://photowebbackend.herokuapp.com';
-  // uri = 'http://localhost:9000'
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
   }
 
   performLogin(data) {
@@ -19,6 +18,7 @@ export class UserService {
   setUserLoggedIn(data) {
     localStorage.setItem('token', data.token);
     localStorage.setItem('user', data.email);
+    this.router.navigate(['/'])
   }
 
   getUserLoggedIn() {
@@ -26,8 +26,8 @@ export class UserService {
     var email = localStorage.getItem('user');
     if (email != null && token != null) {
       return true;
+    } else {
+      return false;
     }
-    
-    return false;
   }
 }
