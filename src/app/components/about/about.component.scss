@@ -1,0 +1,14 @@
+.about {
+  
+  .team {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: #333;
+    grid-gap:3px;
+
+    img {
+        max-height: 725px;
+    //   width: 500px;
+    }
+  }
+}
