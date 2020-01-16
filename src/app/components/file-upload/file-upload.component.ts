@@ -37,7 +37,7 @@ export class FileUploadComponent implements OnInit {
     for (var i = 0; i < this.myFiles.length; i++) {
       frmData.append("image", this.myFiles[i]);
     }
-    this.httpService.post('http://localhost:9000/upload-images', frmData).subscribe(
+    this.httpService.post('http://photowebbackend/upload-images', frmData).subscribe(
       data => {
         // SHOW A MESSAGE RECEIVED FROM THE WEB API.  
         this.sMsg = data as string;
