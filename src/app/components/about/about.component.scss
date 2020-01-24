@@ -1,14 +1,38 @@
 .about {
-  
+  background: #333;
+   color: #fff;
+}
+@media(min-width:568px){
   .team {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    background: #333;
-    grid-gap:3px;
+    grid-gap: 3px;
+ 
+    img:nth-child(1) {
+      max-height: 830px;
+    }
+    img:nth-child(3) {
+      min-height: 750px;
+    }
+  }
 
-    img {
-        max-height: 725px;
-    //   width: 500px;
+}
+
+@media (max-width: 568px) {
+  .team {
+    display: grid;
+     grid-template-columns: auto;
+     grid-gap: 8px;
+ 
+    div {
+      grid-row: 1;
+    }
+    img:nth-child(1) {
+      grid-row: 2;
+    }
+    img:nth-child(3) {
+      grid-row: 3;
+      margin-bottom: 20px;
     }
   }
 }
