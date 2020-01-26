@@ -1,33 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/dist/css/bootstrap.min.css';
-html, body { height: 100%; }
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html,
+body {
+  height: 100%;
+}
 body {
   background: #000000;
-  color: #ffffff; 
-  margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  color: #ffffff;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 img {
-    border-radius: 9px;
-    box-sizing: border-box;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-    // max-width: 90%;
-  }
+  border-radius: 9px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
 
-    .mat-grid-list {
-      display: grid;
-      grid-template-columns: 1fr;
-    }
+.mat-grid-list {
+  column-count: 1;
+}
 
-  @media (min-width: 568px) {
-    .mat-grid-list {
-     
-      .photo{
-        column-count:3;
-      }
-    
-      img {
-        padding: 3px;
-        width: 100%;
-      }
-    }
+@media (min-width: 568px) {
+  .mat-grid-list {
+    column-count: 3;
   }
-  
+}
