@@ -32,16 +32,12 @@ export class FileUploadComponent implements OnInit {
   }
 
   uploadFiles() {
-    var data = [{
-      "category": this.category, "image": this.myFiles[0]
-    }]
-    for (let i = 1; i < this.myFiles.length; i++) {
-      var obj = {
-        "category": this.category, "image": this.myFiles[i]
-      }
-      data.push(obj);
+    var formData = new FormData();
+    formData.append('category', this.category)
+    for (let i = 0; i < this.myFiles.length; i++) {
+      formData.append("image", this.myFiles[i])
     }
-    this.httpService.post('https://photowebbackend/upload-images', data).subscribe(
+    this.httpService.post('https://photowebbackend/upload-images', formData).subscribe(
       data => {
         // SHOW A MESSAGE RECEIVED FROM THE WEB API.  
         this.sMsg = data as string;
