@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotosService } from '../../photos.service';
 import { HttpClient } from '@angular/common/http';
-import {ViewChild} from '@angular/core';
+import { ViewChild } from '@angular/core';
 
 
 
@@ -17,7 +17,7 @@ export class FileUploadComponent implements OnInit {
 
   constructor(private httpService: HttpClient) { }
   myFiles: string[] = [];
-  category: string = '';
+  category: string = 'birthdays';
   sMsg: string = '';
   ngOnInit() {
   }
@@ -32,19 +32,23 @@ export class FileUploadComponent implements OnInit {
   }
 
   uploadFiles() {
-    const frmData = new FormData();
-    frmData.append('category', this.category);
-    for (var i = 0; i < this.myFiles.length; i++) {
-      frmData.append("image", this.myFiles[i]);
+    var data = [{
+      "category": this.category, "image": this.myFiles[0]
+    }]
+    for (let i = 1; i < this.myFiles.length; i++) {
+      var obj = {
+        "category": this.category, "image": this.myFiles[i]
+      }
+      data.push(obj);
     }
-    this.httpService.post('http://photowebbackend/upload-images', frmData).subscribe(
+    this.httpService.post('https://photowebbackend/upload-images', data).subscribe(
       data => {
         // SHOW A MESSAGE RECEIVED FROM THE WEB API.  
         this.sMsg = data as string;
         console.log(this.sMsg);
       }
     );
-    this.myFiles =[];
+    this.myFiles = [];
   }
 
 }
