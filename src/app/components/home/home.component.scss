@@ -1,0 +1,10 @@
+@media(min-width: 568px){
+    .test{
+        carousel:nth-child(2){
+            display: none;
+        }
+        carousel:nth-child(3){
+            display: none;
+        }
+    }
+}
